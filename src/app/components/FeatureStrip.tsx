@@ -21,25 +21,26 @@ const features = [
 
 export default function FeatureStrip() {
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem', display: 'flex', justifyContent: 'center' }}>
       <div
         style={{
           display: 'flex',
           overflowX: 'auto',
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
-          gap: '1.5rem',
+          gap: '2rem',
           paddingBottom: '1rem',
+          width: '100%',
+          maxWidth: '400px', // Controls visible area
+          justifyContent: 'center',
         }}
       >
         {features.map((feature, index) => (
           <div
             key={index}
             style={{
-              flex: '0 0 auto',
-              scrollSnapAlign: 'start',
-              width: '300px',
-              minWidth: '300px',
+              flex: '0 0 100%',
+              scrollSnapAlign: 'center',
               borderRadius: '0.75rem',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
               backgroundColor: 'rgba(197, 196, 196, 0.1)',

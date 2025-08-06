@@ -10,10 +10,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <FeatureSection />
-      <section style={{ marginTop: '4rem', padding: '2rem' }}>
-        <h2 className="text-center mb-4">Explore Our Smart Features</h2>
-        <FeatureStrip />
-      </section>
+  
     </>
   );
 }
