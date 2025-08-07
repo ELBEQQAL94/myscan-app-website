@@ -1,0 +1,31 @@
+.sectionContainer {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #ffffff, #f0fdf4);
+    border-radius: 16px;
+  }
+
+  .sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1e293b;
+  }
+
+  .highlight {
+    color: #059669;
+  }
+
+  .featureBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .reverse {
+    flex-direction: row-reverse;
+  }
+  

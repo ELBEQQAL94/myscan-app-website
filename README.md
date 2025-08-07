@@ -5,25 +5,61 @@ First, let's create the project:
 ```bash
 npx create-next-app@latest name-of-app
 ```
-Then Follow the prompts:
+#### Then Follow the prompts:
 
-TypeScript: Yes or No (your choice)
-ESLint: Yes
-Tailwind CSS: Optional (we can add it later if needed)
-src directory: Yes (recommended)
-App Router: Yes (recommended)
+**TypeScript:** Yes or No (your choice)
 
+**ESLint:** Yes
 
+**Tailwind CSS:** Optional (we can add it later if needed)
+
+**src directory:** Yes
+
+**App Router:** Yes
+
+#### Run the application
 ```bash
-cd my-next-app
+cd myscan-app-website
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Structure of the project 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```plaintext
+src/
+├── app/
+│   ├── layout.tsx            # Global layout with Navbar
+│   ├── page.tsx              # Home page with Hero + Features
+│   ├── page.module.css       # Layout-level styles
+│   └── components/
+│       ├── HeroSection/
+│       │   ├── HeroSection.tsx
+│       │   ├── HeroSection.module.css
+│       │   └── index.ts
+│       ├── FeatureSection/
+│       │   ├── FeatureSection.tsx
+│       │   ├── FeatureSection.module.css
+│       │   └── index.ts
+│       ├── FeatureImageBlock/
+│       │   ├── FeatureImageBlock.tsx
+│       │   ├── FeatureImageBlock.module.css
+│       │   └── index.ts
+│       ├── FeatureContentBlock/
+│       │   ├── FeatureContentBlock.tsx
+│       │   ├── FeatureContentBlock.module.css
+│       │   └── index.ts
+│       └── Navbar/
+│           ├── Navbar.tsx
+│           ├── Navbar.module.css
+│           └── index.ts
+├── globals.css               # Global styles and resets
 
-## Developement :
-### Create a Simple Header Component
+```
+
+#### Using i8 
+
+```bash
+npm install next-i18next
+```

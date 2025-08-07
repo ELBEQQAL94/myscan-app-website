@@ -1,0 +1,31 @@
+.imageContainer {
+    flex: 1 1 40%;
+    position: relative;
+    text-align: center;
+  }
+  
+  .featureImage {
+    width: 180px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+    object-fit: cover;
+    transform: rotate(+5deg);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .imageGlow {
+    position: absolute;
+    bottom: -50px;
+    left: 46%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 30px;
+    background-color: rgb(250, 232, 229);
+    border-radius: 50%;
+    filter: blur(3px);
+    z-index: 1;
+  }
+  

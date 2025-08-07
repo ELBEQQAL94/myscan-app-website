@@ -1,0 +1,47 @@
+.heroContainer {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #059669;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+  }
+  
+  .imageWrapper {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heroImage {
+    max-width: 30%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .textWrapper {
+    flex: 1 1 50%;
+    color: #fff;
+    padding-left: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #f6f7f8;
+    margin-bottom: 1rem;
+  }
+  
+  .storeBadge {
+    height: 45px;
+  }
+  

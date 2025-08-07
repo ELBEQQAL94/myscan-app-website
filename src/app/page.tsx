@@ -1,16 +1,15 @@
-import HeroSection from './components/HeroSection';
-import FeatureSection from './components/FeatureSection';
-import FeatureStrip from './components/FeatureStrip';
-
-
-
+// page.tsx
+import styles from './page.module.css';
+import HeroSection from './components/HeroSection/HeroSection';
+import FeatureSection from './components/FeatureSection/FeatureSection';
 
 export default function HomePage() {
   return (
-    <>
-      <HeroSection />
-      <FeatureSection />
-  
-    </>
+    <div className={styles.page}>
+      <main className={styles.main}>
+        <HeroSection />
+        <FeatureSection />
+      </main>
+    </div>
   );
 }
