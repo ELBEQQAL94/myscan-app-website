@@ -1,0 +1,73 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F9FAFB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#bgGradient)" stroke="url(#borderGradient)" stroke-width="3"/>
+  
+  <!-- Inner Circle for Depth -->
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+  
+  <!-- Professional Barcode - Clear and Bold -->
+  <rect x="22" y="28" width="4" height="64" fill="#111827"/>
+  <rect x="28" y="28" width="2" height="64" fill="#111827"/>
+  <rect x="32" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="35" y="28" width="3" height="64" fill="#111827"/>
+  <rect x="40" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="43" y="28" width="2" height="64" fill="#111827"/>
+  <rect x="47" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="50" y="28" width="4" height="64" fill="#111827"/>
+  <rect x="56" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="59" y="28" width="2" height="64" fill="#111827"/>
+  <rect x="63" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="66" y="28" width="3" height="64" fill="#111827"/>
+  <rect x="71" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="74" y="28" width="2" height="64" fill="#111827"/>
+  <rect x="78" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="81" y="28" width="3" height="64" fill="#111827"/>
+  <rect x="86" y="28" width="1" height="64" fill="#111827"/>
+  <rect x="89" y="28" width="2" height="64" fill="#111827"/>
+  <rect x="93" y="28" width="4" height="64" fill="#111827"/>
+  <rect x="99" y="28" width="1" height="64" fill="#111827"/>
+  
+  <!-- Green Accent Lines for Professional Look -->
+  <rect x="26" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="34" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="42" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="52" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="60" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="68" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="76" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="84" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="92" y="30" width="1" height="60" fill="#10B981"/>
+  <rect x="100" y="30" width="1" height="60" fill="#10B981"/>
+  
+  <!-- Professional Health Leaf -->
+  <path d="M60 12 C66 6, 75 12, 70 20 C65 28, 55 28, 60 20 C65 12, 66 6, 60 12 Z" fill="#10B981"/>
+  <path d="M54 20 C60 12, 69 20, 64 28 C59 36, 49 36, 54 28 C59 20, 60 12, 54 20 Z" fill="#059669"/>
+  <path d="M60 16 C62 14, 64 16, 63 18 C62 20, 58 20, 60 18 C62 16, 62 14, 60 16 Z" fill="#FFFFFF"/>
+  
+  <!-- Professional Checkmark -->
+  <path d="M42 78 L50 86 L78 58" stroke="#10B981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Scanning Frame with Professional Brackets -->
+  <rect x="18" y="24" width="84" height="72" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6,6" opacity="0.2"/>
+  
+  <!-- Professional Corner Brackets -->
+  <path d="M18 24 L28 24 L28 34" stroke="#10B981" stroke-width="4" fill="none"/>
+  <path d="M92 24 L102 24 L102 34" stroke="#10B981" stroke-width="4" fill="none"/>
+  <path d="M18 86 L28 86 L28 96" stroke="#10B981" stroke-width="4" fill="none"/>
+  <path d="M92 86 L102 86 L102 96" stroke="#10B981" stroke-width="4" fill="none"/>
+  
+  <!-- Subtle Inner Glow -->
+  <circle cx="60" cy="60" r="45" fill="none" stroke="#10B981" stroke-width="1" opacity="0.1"/>
+</svg>
