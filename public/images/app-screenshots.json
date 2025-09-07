@@ -1,0 +1,28 @@
+{
+  "screenshots": [
+    {
+      "id": "home-screen",
+      "title": "Home Screen",
+      "description": "Clean, intuitive interface with quick access to scanning and settings",
+      "filename": "app-home-screen.png"
+    },
+    {
+      "id": "scan-screen", 
+      "title": "Scanning Interface",
+      "description": "Advanced camera scanning with real-time barcode detection",
+      "filename": "app-scan-screen.png"
+    },
+    {
+      "id": "results-screen",
+      "title": "Product Results",
+      "description": "Detailed ingredient analysis with personalized recommendations",
+      "filename": "app-results-screen.png"
+    },
+    {
+      "id": "profile-screen",
+      "title": "Profile Settings",
+      "description": "Personalized dietary preferences and health condition settings",
+      "filename": "app-profile-screen.png"
+    }
+  ]
+}
