@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* CTA Section */}
+        {/* footer Section */}
         <div className="text-center mb-8">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to Start Your Healthy Journey?
@@ -41,33 +41,17 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
         {/* Footer Content */}
         <div className="border-t border-emerald-500 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-                <Image
-                  src="/logo-ultimate.svg"
-                  alt="MyScan Logo"
-                  width={32}
-                  height={32}
-                  className="w-full h-full"
-                />
-              </div>
-              <span className="text-xl font-bold">MyScan</span>
-            </div>
-
             {/* Links */}
             <div className="flex flex-wrap items-center gap-6 text-sm">
-              <a href="/" className="text-emerald-100 hover:text-white transition-colors">Home</a>
-              <a href="/features" className="text-emerald-100 hover:text-white transition-colors">Features</a>
-              <a href="/pricing" className="text-emerald-100 hover:text-white transition-colors">Pricing</a>
-              <a href="/how-it-works" className="text-emerald-100 hover:text-white transition-colors">How It Works</a>
-              <a href="/contact" className="text-emerald-100 hover:text-white transition-colors">Contact</a>
+              <Link href="/" className="text-emerald-100 hover:text-white transition-colors">Home</Link>
+              <Link href="/features" className="text-emerald-100 hover:text-white transition-colors">Features</Link>
+              <Link href="/pricing" className="text-emerald-100 hover:text-white transition-colors">Pricing</Link>
+              <Link href="/how-it-works" className="text-emerald-100 hover:text-white transition-colors">How It Works</Link>
+              <Link href="/contact" className="text-emerald-100 hover:text-white transition-colors">Contact</Link>
             </div>
-
             {/* Copyright */}
             <p className="text-emerald-100 text-sm">
               © 2025 MyScan. All rights reserved.

@@ -1,7 +1,6 @@
 "use client";
 
 import { 
-  Smartphone, 
   Scan, 
   Shield, 
   CheckCircle,
@@ -19,7 +18,8 @@ const steps = [
     description: "Get MyScan from the App Store or Google Play. Create your account and log in to start your healthy journey.",
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    borderColor: "border-blue-200"
+    borderColor: "border-blue-200",
+    screenshot: "/images/login.jpeg"
   },
   {
     step: "02", 
@@ -28,7 +28,8 @@ const steps = [
     description: "Set up your health profile with diseases (diabetes, heart conditions) and allergies (nuts, gluten, dairy) for personalized recommendations.",
     color: "text-emerald-600",
     bgColor: "bg-emerald-50",
-    borderColor: "border-emerald-200"
+    borderColor: "border-emerald-200",
+    screenshot: "/images/comprensive_product.jpeg"
   },
   {
     step: "03",
@@ -37,7 +38,8 @@ const steps = [
     description: "Point your camera at any product barcode. Our AI instantly recognizes the product and analyzes it against your health profile.",
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    borderColor: "border-purple-200"
+    borderColor: "border-purple-200",
+    screenshot: "/images/scanscreen.jpg"
   },
   {
     step: "04",
@@ -46,7 +48,8 @@ const steps = [
     description: "View the product picture, health score, and detailed AI analysis showing exactly how it affects your specific conditions and allergies.",
     color: "text-orange-600",
     bgColor: "bg-orange-50",
-    borderColor: "border-orange-200"
+    borderColor: "border-orange-200",
+    screenshot: "/images/details_scan_product.jpeg"
   },
   {
     step: "05",
@@ -55,7 +58,8 @@ const steps = [
     description: "Access your scanned products history tab to see all products with their scores, helping you make better shopping decisions over time.",
     color: "text-teal-600",
     bgColor: "bg-teal-50",
-    borderColor: "border-teal-200"
+    borderColor: "border-teal-200",
+    screenshot: "/images/scanned_product_list.jpeg"
   }
 ];
 
@@ -75,51 +79,117 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connection lines for desktop */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-emerald-200 via-purple-200 via-orange-200 to-teal-200 z-0" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="relative group"
-              >
-                {/* Step Card */}
-                <div className={`relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 ${step.borderColor} hover:border-emerald-300 group-hover:-translate-y-2`}>
-                  {/* Step Number */}
-                  <div className="absolute -top-4 left-8">
-                    <div className={`w-8 h-8 rounded-full ${step.bgColor} border-2 ${step.borderColor} flex items-center justify-center font-bold text-sm ${step.color}`}>
+        <div className="space-y-24">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`flex flex-col lg:flex-row items-center justify-center gap-12 ${
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
+            >
+              {/* Step Content */}
+              <div className="w-full lg:w-1/2 max-w-lg">
+                <div className="space-y-6">
+                  {/* Step Number & Title */}
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-full ${step.bgColor} border-2 ${step.borderColor} flex items-center justify-center font-bold text-lg ${step.color}`}>
                       {step.step}
                     </div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                      {step.title}
+                    </h3>
                   </div>
-
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${step.bgColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className={`w-8 h-8 ${step.color}`} />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  
+                  {/* Description */}
+                  <p className="text-lg text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
-
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
-
-                {/* Arrow for mobile */}
-                {index < steps.length - 1 && (
-                  <div className="md:hidden flex justify-center mt-6 mb-2">
-                    <ArrowRight className="w-6 h-6 text-emerald-400" />
-                  </div>
-                )}
               </div>
-            ))}
-          </div>
+
+              {/* Step Visual */}
+              <div className="w-full lg:w-1/2 max-w-md">
+                <div className="relative group">
+                  <div className="relative mx-auto w-64 h-[500px] bg-gray-900 rounded-[2.5rem] p-1.5 shadow-2xl">
+                    <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                      {/* Full Screenshot - No overlays */}
+                      <div className="absolute top-0 left-0 right-0 bottom-0">
+                        {index === 0 ? (
+                          <Image
+                            src="/images/login.jpeg"
+                            alt="MyScan App - Login Screen"
+                            width={256}
+                            height={500}
+                            className="w-full h-full object-cover"
+                            style={{ filter: 'none' }}
+                          />
+                        ) : index === 1 ? (
+                          <div className="flex items-center justify-center gap-4 h-full">
+                            <div className="w-32 h-96 bg-black rounded-xl p-1">
+                              <div className="w-full h-full bg-white rounded-lg overflow-hidden">
+                                <Image
+                                  src="/images/diseases.jpeg"
+                                  alt="Disease Setup"
+                                  width={128}
+                                  height={384}
+                                  className="w-full h-full object-cover"
+                                  style={{ filter: 'none' }}
+                                />
+                              </div>
+                            </div>
+                            <div className="w-32 h-96 bg-black rounded-xl p-1">
+                              <div className="w-full h-full bg-white rounded-lg overflow-hidden">
+                                <Image
+                                  src="/images/allergies.jpeg"
+                                  alt="Allergy Setup"
+                                  width={128}
+                                  height={384}
+                                  className="w-full h-full object-cover"
+                                  style={{ filter: 'none' }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ) : index === 2 ? (
+                          <Image
+                            src="/images/scanscreen.jpg"
+                            alt="MyScan App - Scanning Interface"
+                            width={256}
+                            height={500}
+                            className="w-full h-full object-cover"
+                            style={{ filter: 'none' }}
+                          />
+                        ) : index === 3 ? (
+                          <Image
+                            src="/images/details_scan_product.jpeg"
+                            alt="MyScan App - Product Results"
+                            width={256}
+                            height={500}
+                            className="w-full h-full object-cover"
+                            style={{ filter: 'none' }}
+                          />
+                        ) : (
+                          <Image
+                            src="/images/scanned_product_list.jpeg"
+                            alt="MyScan App - Product History"
+                            width={256}
+                            height={500}
+                            className="w-full h-full object-cover"
+                            style={{ filter: 'none' }}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Step Icon */}
+                  <div className={`absolute -top-2 -right-2 w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <step.icon className={`w-6 h-6 ${step.color}`} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* App Preview */}

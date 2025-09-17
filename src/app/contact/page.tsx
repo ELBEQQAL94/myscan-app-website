@@ -1,6 +1,6 @@
 "use client";
 
-import { Send, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -20,8 +20,9 @@ export default function ContactPage() {
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Have you been using MyScan? Have a question for us? Looking to discuss media inquiries? 
-                  We're happy to chat about anything!
+                  We&apos;re happy to chat about anything!
                 </p>
+
               </div>
             </div>
 

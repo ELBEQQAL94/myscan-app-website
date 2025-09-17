@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Menu, X, Download } from "lucide-react";
-import Image from "next/image";
 
 // Main nav items
 const NAV = [
@@ -22,6 +21,60 @@ const HEADER_H_REM = 5;
 // Same background as the navbar (so the panel matches perfectly)
 const NAV_BG =
   "bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 border-b border-gray-200/50";
+
+// Reusable components
+const DownloadButton = ({ 
+  className = "", 
+  onClick, 
+  isMobile = false 
+}: { 
+  className?: string; 
+  onClick?: () => void; 
+  isMobile?: boolean;
+}) => (
+  <Link
+    href="/download"
+    className={`inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl ${className}`}
+    onClick={onClick}
+  >
+    <Download className={isMobile ? "w-5 h-5" : "w-4 h-4"} />
+    {isMobile ? "Download the App" : "Download App"}
+  </Link>
+);
+
+const NavLinks = ({ 
+  isMobile = false, 
+  onLinkClick 
+}: { 
+  isMobile?: boolean; 
+  onLinkClick?: () => void;
+}) => {
+  const pathname = usePathname();
+  
+  return (
+    <ul className={`flex items-center gap-6 text-gray-700 font-medium ${
+      isMobile ? "flex-col gap-8 text-2xl font-semibold text-gray-800" : "hidden md:flex lg:text-[16px]"
+    }`}>
+      {NAV.map((item) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            className={`transition-all duration-300 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg hover:bg-emerald-50 ${
+              isMobile 
+                ? "px-4 py-2" 
+                : "text-[18px] px-3 py-2"
+            } ${
+              pathname === item.href ? "text-emerald-600 bg-emerald-50" : ""
+            }`}
+            onClick={onLinkClick}
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -72,47 +125,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <Image
-                src="/logo-ultimate.svg"
+          <Link href="/" className="flex items-center group">
+            <div className="w-30 h-20 flex items-center justify-center">
+              <img
+                src="/favicon.svg"
                 alt="MyScan Logo"
-                width={40}
-                height={40}
-                className="w-full h-full"
-                priority
+                className="w-full h-full group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <span className="font-bold text-2xl text-gray-900 group-hover:text-emerald-600 transition-colors duration-300">
-              My<span className="text-emerald-600">Scan</span>
-            </span>
           </Link>
 
-          {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-8 lg:text-[16px] text-gray-700 font-medium">
-            {NAV.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`transition-all duration-300 text-[18px] hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg px-3 py-2 hover:bg-emerald-50 ${
-                    pathname === item.href ? "text-emerald-600 bg-emerald-50" : ""
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Navigation links */}
+          <NavLinks />
 
-          {/* Desktop CTA */}
+          {/* Download app button */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/download"
-              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Download className="w-4 h-4" />
-              Download App
-            </Link>
+            <DownloadButton className="px-6 py-3" />
           </div>
 
           {/* Mobile menu button */}
@@ -153,30 +181,12 @@ export default function Navbar() {
             >
               <div className="h-full w-full max-w-screen-xl mx-auto px-6 md:px-8">
                 <div className="h-full w-full flex flex-col items-center justify-center gap-10">
-                  <ul className="flex flex-col items-center gap-8 text-2xl font-semibold text-gray-800">
-                    {NAV.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={`hover:text-emerald-600 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg px-4 py-2 hover:bg-emerald-50 ${
-                            pathname === item.href ? "text-emerald-600 bg-emerald-50" : ""
-                          }`}
-                          onClick={() => setOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href="/download"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 shadow-lg"
-                    onClick={() => setOpen(false)}
-                  >
-                    <Download className="w-5 h-5" />
-                    Download the App
-                  </Link>
+                  <NavLinks isMobile onLinkClick={() => setOpen(false)} />
+                  <DownloadButton 
+                    isMobile 
+                    className="px-8 py-4 font-bold" 
+                    onClick={() => setOpen(false)} 
+                  />
                 </div>
               </div>
             </div>

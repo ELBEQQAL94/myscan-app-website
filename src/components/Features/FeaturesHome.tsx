@@ -1,42 +1,25 @@
 "use client";
 
-import { 
-  Scan, 
-  Shield, 
-  Zap, 
-  Heart,
-  CheckCircle,
-  AlertTriangle
-} from "lucide-react";
-
 const features = [
   {
-    icon: Scan,
-    title: "Instant Scanning",
-    description: "Scan any product barcode to get instant ingredient analysis and health insights.",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50"
+    title: "Scan",
+    description: "Point your camera at any product barcode",
+    image: "/images/scanscreen.jpeg"
   },
   {
-    icon: Shield,
-    title: "Allergen Detection",
-    description: "Advanced AI detects allergens and harmful ingredients tailored to your profile.",
-    color: "text-green-600",
-    bgColor: "bg-green-50"
+    title: "See Details",
+    description: "Get instant health analysis and ingredients",
+    image: "/images/details_scan_product.jpeg"
   },
   {
-    icon: Heart,
-    title: "Health Focused",
-    description: "Get personalized recommendations based on your health conditions and dietary needs.",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50"
+    title: "Track Scans",
+    description: "View your scanned products history",
+    image: "/images/scanned_product_list.jpeg"
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Get results in milliseconds with our optimized scanning technology.",
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-50"
+    title: "Get Recommendations",
+    description: "Receive personalized health suggestions",
+    image: "/images/comprensive_product.jpeg"
   }
 ];
 
@@ -53,21 +36,51 @@ export default function FeaturesHome() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group text-center p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+              className="group text-center"
             >
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${feature.bgColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className={`w-8 h-8 ${feature.color}`} />
+              {/* iPhone Mockup */}
+              <div className="mb-6 flex justify-center">
+                <div className="relative w-52 h-[400px] mx-auto group-hover:scale-105 transition-transform duration-300">
+                  {/* iPhone Body */}
+                  <div className="absolute inset-0 bg-gray-900 rounded-[2rem] p-1 shadow-xl">
+                    {/* Screen */}
+                    <div className="w-full h-full bg-black rounded-[1.5rem] overflow-hidden relative">
+                      {/* Notch */}
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg z-10"></div>
+                      
+                      {/* Screen Content */}
+                      <div className="w-full h-full pt-6">
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Home Indicator */}
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-white rounded-full opacity-60"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Side Buttons */}
+                  <div className="absolute left-0 top-12 w-0.5 h-5 bg-gray-700 rounded-r-sm"></div>
+                  <div className="absolute left-0 top-18 w-0.5 h-6 bg-gray-700 rounded-r-sm"></div>
+                  <div className="absolute left-0 top-28 w-0.5 h-6 bg-gray-700 rounded-r-sm"></div>
+                  
+                  {/* Power Button */}
+                  <div className="absolute right-0 top-16 w-0.5 h-10 bg-gray-700 rounded-l-sm"></div>
+                </div>
               </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-300">
+
+              {/* Content */}
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
                 {feature.title}
               </h3>
-              
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600">
                 {feature.description}
               </p>
             </div>

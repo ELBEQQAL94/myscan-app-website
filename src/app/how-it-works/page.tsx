@@ -1,17 +1,14 @@
 "use client";
 
 import { 
-  Smartphone, 
   Scan, 
   Shield, 
   CheckCircle,
-  ArrowRight,
   Download,
   Settings,
   Heart,
   AlertTriangle,
   Zap,
-  Database,
   Users
 } from "lucide-react";
 import Image from "next/image";
@@ -142,33 +139,33 @@ export default function HowItWorksPage() {
 
       {/* Detailed Steps */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
             {detailedSteps.map((step, index) => (
-              <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Content */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className={`w-12 h-12 rounded-full ${step.bgColor} border-2 ${step.borderColor} flex items-center justify-center font-bold text-lg ${step.color}`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`w-10 h-10 rounded-full ${step.bgColor} border-2 ${step.borderColor} flex items-center justify-center font-bold text-base ${step.color}`}>
                       {step.step}
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">
                       {step.title}
                     </h2>
                   </div>
                   
-                  <div className="pl-4 pr-6 py-4 bg-gray-50 rounded-xl mb-8">
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                  <div className="pl-3 pr-4 py-3 bg-gray-50 rounded-xl mb-6">
+                    <p className="text-base text-gray-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
 
-                  <div className="pl-4 pr-6 py-4 bg-white rounded-xl border border-gray-200">
-                    <ul className="space-y-3">
+                  <div className="pl-3 pr-4 py-3 bg-white rounded-xl border border-gray-200">
+                    <ul className="space-y-2">
                       {step.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-start gap-3">
-                          <CheckCircle className={`w-5 h-5 ${step.color} mt-0.5 flex-shrink-0`} />
-                          <span className="text-gray-700">{detail}</span>
+                        <li key={detailIndex} className="flex items-start gap-2">
+                          <CheckCircle className={`w-4 h-4 ${step.color} mt-0.5 flex-shrink-0`} />
+                          <span className="text-sm text-gray-700">{detail}</span>
                         </li>
                       ))}
                     </ul>
@@ -224,6 +221,19 @@ export default function HowItWorksPage() {
                           <Image
                             src="/images/scanscreen.jpg"
                             alt="MyScan App - Scanning Interface"
+                            width={300}
+                            height={600}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : index === 3 ? (
+                      // Step 4: Results & Score
+                      <div className="w-48 h-96 bg-black rounded-2xl p-1 shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <div className="w-full h-full bg-white rounded-xl overflow-hidden">
+                          <Image
+                            src="/images/details_scan_product.jpeg"
+                            alt="MyScan App - Product Results"
                             width={300}
                             height={600}
                             className="w-full h-full object-cover"
