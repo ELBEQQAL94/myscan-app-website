@@ -4,8 +4,7 @@ import {
   Download,
   Settings,
   Scan,
-  Shield,
-  CheckCircle
+  Shield
 } from "lucide-react";
 import Image from "next/image";
 

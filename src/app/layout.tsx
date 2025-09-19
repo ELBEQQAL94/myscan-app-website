@@ -19,6 +19,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "MyScan",
   description: "A simple way to scan products and understand their impact.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -3,12 +3,9 @@
 import { 
   Check, 
   Star, 
-  Crown,
   Zap,
   Shield,
-  Database,
-  Download,
-  ArrowRight
+  Database
 } from "lucide-react";
 
 const plans = [
@@ -69,7 +66,7 @@ export default function Premium() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Unlock the full potential of healthy eating with our premium features.
-            Start free and upgrade when you're ready.
+            Start free and upgrade when you&apos;re ready.
           </p>
         </div>
 
